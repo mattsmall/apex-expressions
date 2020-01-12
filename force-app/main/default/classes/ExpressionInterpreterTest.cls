@@ -1059,11 +1059,11 @@ private class ExpressionInterpreterTest {
 
 /**
     @isTest
-    static void interp_stringMatchesTraakrRegex() {
-        // [\\w\\.]*@(?!traackr\\.com).*>> wrote:"
+    static void interp_stringMatchesDreamRegex() {
+        // [\\w\\.]*@(?!dream\\.com).*>> wrote:"
         Map<String, Object> ns = new Map<String, Object>();
-        ns.put('a', 'matt@traackr.com >> wrote: foo');
-        System.assert(ExpressionInterpreter.eval(ns,'a matches "[\\w\\.]*@(?!traackr\\.com).*>> wrote:"') == true);
+        ns.put('a', 'matt@dream.com >> wrote: foo');
+        System.assert(ExpressionInterpreter.eval(ns,'a matches "[\\w\\.]*@(?!dream\\.com).*>> wrote:"') == true);
     }
     */
     
