@@ -583,8 +583,8 @@ public with sharing class ExpressionInterpreter {
             } else if (fldValue instanceof SObject) {
                 newObjFields.put(key.toLowerCase(), sObjectToMap((SObject)fldValue));
                 if (namespace != null && namespace.length() > 0 && key.startsWith(namespace+'__')) {
-                    // EX: aknu_qa__Account__r --> Account
-                    // AND: aknu_qa__Account__r --> Account__r
+                    // EX: devns__Account__r --> Account
+                    // AND: devns__Account__r --> Account__r
                     System.debug('Putting __r fields for ' + key);
                     System.debug('Putting: ' + key.toLowerCase().substring(namespace.length() + 2, key.length() - 3) + ' as object');
                     newObjFields.put(key.toLowerCase().substring(namespace.length() + 2, key.length() - 3), sObjectToMap((SObject)fldValue));
@@ -596,8 +596,8 @@ public with sharing class ExpressionInterpreter {
             } else {
                 newObjFields.put(key.toLowerCase(), fldValue);
                 if (namespace != null && namespace.length() > 0 && key.startsWith(namespace+'__')) {
-                    // EX: aknu_qa__InitiatorRole__c --> InitiatorRole (unless aknu_qa__InitiatorRole__r has already been mapped to InitiatorRole)
-                    // AND: aknu_qa__InitiatorRole__c --> InitiatorRole__c
+                    // EX: devns__InitiatorRole__c --> InitiatorRole (unless devsns__InitiatorRole__r has already been mapped to InitiatorRole)
+                    // AND: devns__InitiatorRole__c --> InitiatorRole__c
                     System.debug('Putting __c fields for ' + key);
                     if (!newObjFields.containsKey(key.toLowerCase().substring(namespace.length() + 2, key.length() - 3))) {
                         System.debug('Putting: ' + key.toLowerCase().substring(namespace.length() + 2, key.length() - 3));
