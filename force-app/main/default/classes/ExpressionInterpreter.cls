@@ -45,9 +45,6 @@ SOFTWARE.
  * to return a response of true or false.
  */
  
- /*
- * This class MUST maintain functional equivalence to the ExpressionInterpreter.java class in akoonu-app.
- */
 public with sharing class ExpressionInterpreter {
 
     public static final String NONE = 'NONE';
